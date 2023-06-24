@@ -1,0 +1,21 @@
+<!--左側-->
+<%= render 'users/info', user: @user %>
+
+<!--右側-->
+<div>
+  <h1>Books</h1>
+  <label>Title</label>
+  <label>Opinion</label>
+  <% @books.each do |book| %>
+    <div>
+      <%= link_to user_path(book.user.id) do %>
+        <%= image_tag book.get_book_image(80,80) %>
+      <% end %>
+      <%= link_to book_path(book.id) do %>
+        <%= book.title %>
+      <% end %>
+      <%= book.opinion %>
+    </div>
+  <% end %>
+</div>
+

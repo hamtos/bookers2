@@ -1,0 +1,22 @@
+<h1>User info</h1>
+<%= form_with model: @user, method: :patch do |f| %>
+  <div>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :profile_image, "Image" %>
+    <%= f.file_field :profile_image, accept: "image/*" %>
+  </div>
+
+  <div>
+    <%= f.label :introduction, "Introduction" %>
+    <%= f.text_area :introduction %>
+  </div>
+
+  <div>
+    <%= f.submit "Update User" %>
+  </div>
+
+<% end %>

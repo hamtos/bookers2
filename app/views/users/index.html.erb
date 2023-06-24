@@ -1,0 +1,16 @@
+<!--左側-->
+<%= render 'users/info', user: @user %>
+
+<!--右側-->
+<div>
+  <h1>Users</h1>
+  <label>image</label>
+  <label>name</label>
+  <% @users.each do |user| %>
+    <div>
+      <%= image_tag user.get_profile_image(80,80) %>
+      <%= user.name %>
+      <%= link_to 'Show',user_path(user.id) %>
+    </div>
+  <% end %>
+</div>
