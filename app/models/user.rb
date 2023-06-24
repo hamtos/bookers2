@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
 has_many :books, dependent: :destroy
 
- has_one_attached :profile_image
+has_one_attached :profile_image
+
+validates :name, length:{minimum: 2}, presence: true
 
  # 画像ファイルが見つからない場合、特定の画像ファイルを表示する
   def get_profile_image(width, height)

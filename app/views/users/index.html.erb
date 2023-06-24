@@ -1,16 +1,31 @@
-<!--左側-->
-<%= render 'users/info', user: @user %>
-
-<!--右側-->
-<div>
-  <h1>Users</h1>
-  <label>image</label>
-  <label>name</label>
-  <% @users.each do |user| %>
-    <div>
-      <%= image_tag user.get_profile_image(80,80) %>
-      <%= user.name %>
-      <%= link_to 'Show',user_path(user.id) %>
+<div class="container pt-3">
+  <div class="row">
+    <!--左側-->
+    <div class="col-4">
+      <%= render 'users/info', user: @user %>
     </div>
-  <% end %>
+
+    <!--右側-->
+    <div class="col-8">
+      <h1>Users</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="width:30%">image</th>
+            <th>name</th>
+            <th style="width:20%"></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <th><%= image_tag user.get_profile_image(80,80) %></th>
+            <th><%= user.name %></th>
+            <th><%= link_to 'Show',user_path(user.id) %></th>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

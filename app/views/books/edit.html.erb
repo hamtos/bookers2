@@ -1,23 +1,35 @@
-<h1>Editing Book</h1>
-<%= form_with model: @book, method: :patch do |f| %>
-  <div>
-    <%= f.label :title, "Title" %>
-    <%= f.text_field :title %>
-  </div>
+<div class="container-sm">
+  <h1>Editing Book</h1>
 
-  <div>
-    <%= f.label :opinion, "Opinion" %>
-    <%= f.text_area :opinion %>
-  </div>
+  <% if @book.errors.any? %>
+    <h3><%= @book.errors.count %>error prohibited this obj from being saved:</h3>
+    <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
 
-  <div>
-    <%= f.submit "Update Book" %>
-  </div>
+  <%= form_with model: @book, method: :patch do |f| %>
+    <div>
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title, class: "form-control mb-3" %>
+    </div>
 
-  <div>
-    <%= link_to "Show", book_path %>
-    |
-    <%= link_to "Back", books_path %>
-  </div>
+    <div>
+      <%= f.label :opinion, "Opinion" %>
+      <%= f.text_area :opinion, class: "form-control mb-3" %>
+    </div>
 
-<% end %>
+    <div>
+      <%= f.submit "Update Book", class: "btn btn-success mb-3" %>
+    </div>
+
+    <div>
+      <%= link_to "Show", book_path %>
+      |
+      <%= link_to "Back", books_path %>
+    </div>
+
+  <% end %>
+</div>

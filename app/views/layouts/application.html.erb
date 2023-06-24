@@ -70,7 +70,8 @@
         </div>
       </nav>
     </header>
-
+    <div><%= flash[:notice] %></div><!--sign_up/in/out_notice-->
+    <div><%= flash[:alert] %></div>
     <%= yield %>
 
     <footer class="container mt-5">

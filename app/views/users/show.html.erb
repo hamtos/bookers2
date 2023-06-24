@@ -1,17 +1,13 @@
-<!--左側-->
-<%= render 'info', user: @user %>
+<div class="container">
+  <div class="row">
+    <!--左側-->
+    <div class="col-4">
+      <%= render 'info', user: @user %>
+    </div>
 
-  <!--右側-->
-<div>
-  <h1>Books</h1>
-  <p>Title</p>
-  <p>Opinion</p>
-  <% @books.each do |book| %>
-    <%= image_tag book.get_book_image(100,100) %>
-    <%= link_to book_path(book.id) do %>
-      <%= book.title %>
-    <% end %>
-    <%= book.opinion %>
-  <% end %>
+    <!--右側-->
+    <div class="col-8">
+      <%= render 'books/list', books:@books %>
+    </div>
+  </div>
 </div>
-
