@@ -26,7 +26,7 @@
           <% if user_signed_in? %>
             <li>
               <%= link_to user_path(current_user.id), class: 'nav-link text-light' do %>
-                <i class="fa-solid fa-house-chimney" style="color: #ffffff;"></i> Home
+                <i class="fas fa-home" style="color: #ffffff;"></i> Home
               <% end %>
             </li>
             <li>
@@ -41,13 +41,13 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>
-                <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i> Log out
+                <i class="fas fa-sign-out-alt" style="color: #ffffff;"></i> Log out
               <% end %>
             </li>
           <% else %>
             <li>
               <%= link_to root_path, class: 'nav-link text-light' do %>
-                <i class="fa-solid fa-house-chimney" style="color: #ffffff;"></i> Home
+                <i class="fas fa-home" style="color: #ffffff;"></i> Home
               <% end %>
             </li>
             <li>
@@ -62,7 +62,7 @@
             </li>
             <li>
               <%= link_to new_user_session_path, class: 'nav-link text-light' do %>
-                <i class="fa-solid fa-arrow-right-to-bracket" style="color: #ffffff;"></i> Log in
+                <i class="fas fa-sign-in-alt" style="color: #ffffff;"></i> Log in
               <% end %>
             </li>
           <% end %>
@@ -75,7 +75,7 @@
     <%= yield %>
 
     <footer class="container mt-5">
-      <p>CopyRight Infratop.inc</p>
+      <p class="text-center">CopyRight Infratop.inc</p>
     </footer>
 
   </body>

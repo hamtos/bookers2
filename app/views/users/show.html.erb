@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <!--左側-->
-    <div class="col-4">
+    <div class="col-md-3">
       <%= render 'info', user: @user %>
     </div>
 
     <!--右側-->
-    <div class="col-8">
+    <div class="col-md-8 offset-md-1">
       <%= render 'books/list', books:@books %>
     </div>
   </div>

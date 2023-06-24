@@ -8,7 +8,8 @@ has_many :books, dependent: :destroy
 
 has_one_attached :profile_image
 
-validates :name, length:{minimum: 2}, presence: true
+validates :name, length: {in: 2..20}, uniqueness: true
+validates :introduction, length: {maximum: 50}
 
  # 画像ファイルが見つからない場合、特定の画像ファイルを表示する
   def get_profile_image(width, height)
